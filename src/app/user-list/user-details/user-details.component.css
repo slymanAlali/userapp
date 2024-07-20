@@ -1,0 +1,17 @@
+.user-details {
+    width: 80%;
+     /* background-color: burlywood;  */
+    height: 800px;
+}
+/* .detail-image{
+    width: 390px;
+    height: 390px;
+    background-color: aliceblue;
+} */
+
+.detail-detail{
+    background-color: darkgrey;
+}
+.detail-detail p{
+    color: black;
+}

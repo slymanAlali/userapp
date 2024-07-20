@@ -1,0 +1,33 @@
+<div class="user-list-container">
+  <mat-toolbar color="primary">
+    <span>User Directory</span>
+    <mat-form-field>
+      <mat-label>Search by ID</mat-label>
+      <div class="input--input">
+      <input matInput
+      [(ngModel)]="searchText"> 
+      <div>
+      
+    </div>
+    </div>
+    <hr>
+    </mat-form-field>
+  </mat-toolbar>
+  <div *ngIf="loading" class="loading-bar"  ></div>
+  <div class="user-list">
+
+    
+    <mat-card *ngFor="let user of users | filter: searchText">
+      <img mat-card-avatar [src]="user.avatar" alt="{{ user.first_name }} {{ user.last_name }}">
+      <mat-card-title>{{ user.first_name }} {{ user.last_name }}</mat-card-title>
+      <button routerLink="users/details/{{user.id}}"
+      >View Detail</button>
+    </mat-card>
+  
+  </div>
+  <mat-paginator [length]="totalUsers" [pageSize]="pageSize" (page)="changePage($event)"></mat-paginator>
+</div>
+
+
+
+

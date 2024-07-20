@@ -1,0 +1,22 @@
+<div class="header-input">
+    <input type="text" placeholder="search"
+    [(ngModel)]="searchText"
+    (input)="updateSearchText()">
+    <button class="btn-search"
+    (click)="updateSearchText()">
+    Search
+    </button>
+    <br />
+    <div>
+        <p
+        *ngIf="searchText != '' "
+        ><strong> result for:</strong>{{searchText}}</p>
+    </div>
+    </div>
+
+    <!-- <button  
+    (click)="updateSearchText(searchInput)"
+    [ngClass]="{'btn': true, 'btn-search': searchText, 'btn-search-disabled': !searchText }"
+    [disabled]="!searchText"
+    >
+    Search </button> -->
